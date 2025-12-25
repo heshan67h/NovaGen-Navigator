@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "NovaGen Prompt Navigator",
+  "version": "3.6",
+  "description": "Professional AI Prompt Navigator for ChatGPT, DeepSeek, Claude & Gemini",
+  "permissions": ["storage", "tabs", "activeTab"],
+  "icons": {
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://*.deepseek.com/*",
+        "https://claude.ai/*",
+        "https://gemini.google.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content-styles.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["chatgpt.png", "deepseek.png", "claude.png", "gemini.png", "icon128.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

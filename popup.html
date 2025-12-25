@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        width: 320px;
+        margin: 0;
+        padding: 15px;
+        background: #ffffff;
+      }
+      .prompt {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+        font-weight: 500;
+        color: #3a3a3a;
+        font-size: 13px;
+        transition: 0.2s;
+      }
+      .prompt:hover {
+        background: #f8f9ff;
+        color: #6366f1;
+      }
+      .heading-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+      }
+      .heading {
+        font-weight: bold;
+        color: #1a1a1a;
+        margin-top: -0.25rem;
+        font-size: 18px;
+      }
+      #main-logo {
+        width: 55px;
+        height: 55px;
+        margin-block: 1rem;
+        border-radius: 12px;
+      }
+      .sub-heading {
+        color: #777777;
+        margin-top: -0.75rem;
+        font-size: 12px;
+        text-align: center;
+      }
+      
+      /* Welcome Screen Styles */
+      #unsupported-view {
+        text-align: center;
+        padding: 20px 10px;
+      }
+      .welcome-title {
+        font-weight: 800;
+        color: #6366f1;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .welcome-desc {
+        font-size: 13px;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      .novagen-btn {
+        background: #6366f1;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 600;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="supported-view" style="display: none;">
+      <div class="heading-wrapper">
+        <div><img src="/deepseek.png" id="main-logo" /></div>
+        <h2 class="heading">
+          Your <span id="platform"></span> Prompts (<span id="prompt-count">0</span>)
+        </h2>
+        <p class="sub-heading">Jump to any prompt by clicking one below!</p>
+      </div>
+      <div id="list"></div>
+    </div>
+
+    <div id="unsupported-view" style="display: none;">
+      <div class="heading-wrapper">
+        <img src="/icon128.png" id="main-logo" />
+        <div class="welcome-title">NovaGen Navigator</div>
+      </div>
+      <p class="welcome-desc">
+        Please open <b>ChatGPT, Claude, Gemini,</b> or <b>DeepSeek</b> to start managing your prompts effortlessly.
+      </p>
+      <a href="https://novagen.software" target="_blank" class="novagen-btn">Visit NovaGen Official</a>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
